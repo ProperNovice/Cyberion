@@ -1,7 +1,6 @@
 package cards;
 
 import controller.BotFeature;
-import utils.ImageView;
 
 public abstract class Bot extends Card {
 
@@ -10,7 +9,7 @@ public abstract class Bot extends Card {
 	public Bot(BotFeature botFeature) {
 
 		this.botFeature = botFeature;
-		new ImageView(getFilePath(), this);
+		createImageView(getFilePath());
 
 	}
 

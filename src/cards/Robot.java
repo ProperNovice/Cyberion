@@ -12,7 +12,6 @@ public class Robot extends Bot {
 	protected String getFilePath() {
 
 		String filePath = super.getFilePath();
-		System.out.println(filePath);
 		filePath += "robots/";
 		filePath += this.getBotFeature().getEModel().toString().toLowerCase() + "/";
 		filePath += this.getBotFeature().getSize() + ".jpg";
