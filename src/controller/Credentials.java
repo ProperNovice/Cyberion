@@ -17,6 +17,7 @@ public enum Credentials {
 	public RearrangeTypeEnum rearrangeTypeEnumText = RearrangeTypeEnum.LINEAR;
 
 	public Vector2 dCard;
+	public Vector2 cFactory;
 
 	private Credentials() {
 
