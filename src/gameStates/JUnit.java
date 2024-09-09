@@ -1,9 +1,7 @@
 package gameStates;
 
-import cards.CardMachineSameModel;
-import cards.CardMachineSameSize;
+import cards.CardMachineLessThan;
 import enums.EMachineStage;
-import enums.EModel;
 import gameStatesDefault.GameState;
 
 public class JUnit extends GameState {
@@ -11,8 +9,7 @@ public class JUnit extends GameState {
 	@Override
 	public void execute() {
 
-		new CardMachineSameModel(EMachineStage.III, EModel.CYCLOBOT);
-		new CardMachineSameSize(EMachineStage.III, 5);
+		new CardMachineLessThan(EMachineStage.II, 6);
 
 	}
 

@@ -8,7 +8,21 @@ public abstract class MachineTypeCredentials {
 
 	}
 
-	public int cardsWithSameFeature() {
+	public int robotsWithSameFeature() {
+
+		ShutDown.INSTANCE.execute();
+		return -1;
+
+	}
+
+	public int identicalRobots() {
+
+		ShutDown.INSTANCE.execute();
+		return -1;
+
+	}
+
+	public int additionRobotsAmount() {
 
 		ShutDown.INSTANCE.execute();
 		return -1;

@@ -11,9 +11,7 @@ public abstract class CardMachine extends Card {
 	private MachineTypeCredentials machineTypeCredentials = null;
 
 	public CardMachine(EMachineStage eMachineStage) {
-
 		createMachineTypeCredentials(eMachineStage);
-
 	}
 
 	@Override

@@ -3,7 +3,7 @@ package machineStages;
 public class MachineTypeCredentialsStageI extends MachineTypeCredentials {
 
 	@Override
-	public int cardsWithSameFeature() {
+	public int robotsWithSameFeature() {
 		return 2;
 	}
 
