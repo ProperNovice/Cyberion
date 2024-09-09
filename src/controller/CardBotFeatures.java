@@ -2,12 +2,12 @@ package controller;
 
 import enums.EModel;
 
-public class BotFeature {
+public class CardBotFeatures {
 
 	private EModel eModel = null;
 	private int size = -1;
 
-	public BotFeature(EModel eModel, int size) {
+	public CardBotFeatures(EModel eModel, int size) {
 
 		this.eModel = eModel;
 		this.size = size;
