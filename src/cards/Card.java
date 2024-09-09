@@ -10,7 +10,7 @@ public abstract class Card implements IImageViewAble {
 	}
 
 	protected final void createImageView(String filePath) {
-		new ImageView(getFilePath(), this);
+		new ImageView(filePath, this);
 	}
 
 	protected String getFilePath() {
