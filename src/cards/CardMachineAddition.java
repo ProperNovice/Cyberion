@@ -4,9 +4,9 @@ import enums.EMachineStage;
 
 public abstract class CardMachineAddition extends CardMachine {
 
-	private int value = -1;
+	private int value = -1, numberOfCards = -1;
 
-	public CardMachineAddition(EMachineStage eMachineStage, int value) {
+	public CardMachineAddition(EMachineStage eMachineStage, int value, int numberOfCards) {
 
 		super(eMachineStage);
 
@@ -21,8 +21,12 @@ public abstract class CardMachineAddition extends CardMachine {
 
 	}
 
-	public final int getValue() {
+	public int getValue() {
 		return this.value;
+	}
+
+	public int getNumberOfCards() {
+		return this.numberOfCards;
 	}
 
 }
