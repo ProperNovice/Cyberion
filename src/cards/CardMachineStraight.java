@@ -2,15 +2,15 @@ package cards;
 
 import enums.EMachineStage;
 
-public class CardMachinePairs extends CardMachine {
+public class CardMachineStraight extends CardMachine {
 
-	public CardMachinePairs(EMachineStage eMachineStage) {
+	public CardMachineStraight(EMachineStage eMachineStage) {
 
 		super(eMachineStage);
 
 		String filePath = getFilePath();
 		filePath += "stage " + eMachineStage + "/";
-		filePath += "pairs.jpg";
+		filePath += "straight.jpg";
 
 		super.createImageView(filePath);
 
