@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 import utils.Enums.AnimationSynchEnum;
 import utils.Enums.ImageViewActionEnum;
-import utils.Enums.Lists;
+import utils.Enums.ListsSaveLoad;
 import utils.Enums.RearrangeTypeEnum;
 import utils.Enums.RelocateTypeEnum;
 import utils.Interfaces.IImageViewAble;
@@ -22,7 +22,7 @@ public class ListImageViewAbles<T> implements Iterable<T> {
 		this.arrayList = new ArrayListImageView<T>((ListImageViewAbles<IImageViewAble>) this,
 				() -> showListSize());
 
-		Lists.INSTANCE.lists.addLast((ListImageViewAbles<IImageViewAble>) this);
+		ListsSaveLoad.INSTANCE.lists.addLast((ListImageViewAbles<IImageViewAble>) this);
 
 	}
 

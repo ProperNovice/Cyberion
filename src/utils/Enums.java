@@ -44,7 +44,7 @@ public class Enums {
 
 	}
 
-	public enum Lists {
+	public enum ListsSaveLoad {
 
 		INSTANCE;
 
