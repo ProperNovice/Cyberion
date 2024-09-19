@@ -107,8 +107,6 @@ public enum Credentials {
 		x -= this.dGapBetweenComponents.x;
 		y = this.cPlatform.y;
 		this.cRobotDeck = new Vector2(x, y);
-		
-		this.cRobotDeck.print();
 
 		// c discard
 

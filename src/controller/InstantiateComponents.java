@@ -19,6 +19,13 @@ public enum InstantiateComponents {
 		listModels.addLast(EModel.STOCKBOT);
 
 		createCardRobots(listModels);
+		CardBacks.values();
+
+		for (int counter = 1; counter <= 5; counter++)
+			Lists.INSTANCE.platform.getArrayList()
+					.addLast(Lists.INSTANCE.robotDeck.getArrayList().removeRandom());
+		
+		Lists.INSTANCE.platform.relocateImageViews();
 
 	}
 

@@ -39,9 +39,10 @@ public enum Lists {
 		this.stock.getArrayList().setCapacity(5);
 		this.stock.getListCredentials().coordinatesList = Credentials.INSTANCE.cStock;
 
-		// machine
+		// machine deck
 
 		this.machineDeck.getListCredentials().coordinatesList = Credentials.INSTANCE.cMachineDeck;
+		this.machineDeck.getListCredentials().rearrangeTypeEnum = RearrangeTypeEnum.STATIC;
 
 		// robot deck
 
@@ -52,10 +53,12 @@ public enum Lists {
 
 		this.experiencePile
 				.getListCredentials().coordinatesList = Credentials.INSTANCE.cExperiencePile;
+		this.experiencePile.getListCredentials().rearrangeTypeEnum = RearrangeTypeEnum.STATIC;
 
 		// discard
 
 		this.discard.getListCredentials().coordinatesList = Credentials.INSTANCE.cDiscard;
+		this.discard.getListCredentials().rearrangeTypeEnum = RearrangeTypeEnum.STATIC;
 
 	}
 
