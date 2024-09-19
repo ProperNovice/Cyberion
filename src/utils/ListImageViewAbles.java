@@ -28,9 +28,6 @@ public class ListImageViewAbles<T> implements Iterable<T> {
 
 	public final void layerZSort() {
 
-		if (this.listCredentials.layerZListEnum == null)
-			ShutDown.INSTANCE.execute();
-
 		switch (this.listCredentials.layerZListEnum) {
 
 		case TO_FRONT_FIRST_IMAGEVIEW:

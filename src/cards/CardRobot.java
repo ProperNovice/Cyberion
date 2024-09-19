@@ -1,11 +1,11 @@
 package cards;
 
-import controller.CardBotFeatures;
+import enums.EModel;
 
 public class CardRobot extends CardBot {
 
-	public CardRobot(CardBotFeatures cardBotFeatures) {
-		super(cardBotFeatures);
+	public CardRobot(EModel eModel, int size) {
+		super(eModel, size);
 	}
 
 	@Override

@@ -1,14 +1,15 @@
 package cards;
 
 import controller.CardBotFeatures;
+import enums.EModel;
 
 public abstract class CardBot extends Card {
 
 	private CardBotFeatures cardBotFeatures = null;
 
-	public CardBot(CardBotFeatures cardBotFeatures) {
+	public CardBot(EModel eModel, int size) {
 
-		this.cardBotFeatures = cardBotFeatures;
+		this.cardBotFeatures = new CardBotFeatures(eModel, size);
 		createImageView(getFilePath());
 
 	}

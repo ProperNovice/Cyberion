@@ -76,16 +76,12 @@ public enum Credentials {
 
 		x = this.cFlash.x;
 		y = this.cFlash.y;
-		y += this.dCard.y;
-		y += this.dCard.y;
 		this.cPlatform = new Vector2(x, y);
 
 		// c stock
 
 		x = this.cPlatform.x;
 		y = this.cPlatform.y;
-		y += this.dCard.y;
-		y += this.dCard.y;
 		this.cStock = new Vector2(x, y);
 
 		// c machine deck
@@ -111,6 +107,8 @@ public enum Credentials {
 		x -= this.dGapBetweenComponents.x;
 		y = this.cPlatform.y;
 		this.cRobotDeck = new Vector2(x, y);
+		
+		this.cRobotDeck.print();
 
 		// c discard
 

@@ -1,6 +1,7 @@
 package controller;
 
 import cards.CardBot;
+import utils.Enums.RearrangeTypeEnum;
 import utils.ListImageViewAbles;
 
 public enum Lists {
@@ -45,6 +46,7 @@ public enum Lists {
 		// robot deck
 
 		this.robotDeck.getListCredentials().coordinatesList = Credentials.INSTANCE.cRobotDeck;
+		this.robotDeck.getListCredentials().rearrangeTypeEnum = RearrangeTypeEnum.STATIC;
 
 		// experience pile
 
