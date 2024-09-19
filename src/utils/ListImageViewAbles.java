@@ -24,8 +24,6 @@ public class ListImageViewAbles<T> implements Iterable<T> {
 
 		Lists.INSTANCE.lists.addLast((ListImageViewAbles<IImageViewAble>) this);
 
-		this.arrayList.setCapacity(this.listCredentials.capacity);
-
 	}
 
 	public final void layerZSort() {

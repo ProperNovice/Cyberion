@@ -5,6 +5,7 @@ import machineStages.MachineTypeCredentials;
 import machineStages.MachineTypeCredentialsStageI;
 import machineStages.MachineTypeCredentialsStageII;
 import machineStages.MachineTypeCredentialsStageIII;
+import utils.Logger;
 
 public abstract class CardMachine extends Card {
 
@@ -41,6 +42,11 @@ public abstract class CardMachine extends Card {
 
 		}
 
+	}
+
+	@Override
+	protected void printCredentials() {
+		Logger.INSTANCE.log(this.machineTypeCredentials.getClass().getSimpleName());
 	}
 
 }

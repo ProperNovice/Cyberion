@@ -1,6 +1,7 @@
 package cards;
 
 import enums.EMachineStage;
+import utils.Logger;
 
 public class CardMachineSameSize extends CardMachine {
 
@@ -27,6 +28,12 @@ public class CardMachineSameSize extends CardMachine {
 
 		super.createImageView(filePath);
 
+	}
+
+	@Override
+	protected void printCredentials() {
+		super.printCredentials();
+		Logger.INSTANCE.log(this.size);
 	}
 
 }

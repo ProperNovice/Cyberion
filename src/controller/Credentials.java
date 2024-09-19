@@ -17,7 +17,7 @@ public enum Credentials {
 	public RearrangeTypeEnum rearrangeTypeEnumText = RearrangeTypeEnum.LINEAR;
 
 	public Vector2 dCard;
-	public Vector2 cFactory;
+	public Vector2 cFactory, cFlash, cPlatform, cStock;
 
 	private Credentials() {
 
@@ -54,6 +54,38 @@ public enum Credentials {
 		x = 223;
 		y = 334;
 		this.dCard = new Vector2(x, y);
+
+		// c factory
+
+		x = this.dFrame.x / 2;
+		x -= 2.5 * this.dCard.x;
+		x -= 2 * this.dGapBetweenComponents.x;
+		y = this.gapBetweenBorders;
+		this.cFactory = new Vector2(x, y);
+
+		// c flash
+
+		x = this.cFactory.x;
+		y = this.cFactory.y;
+		y += this.dCard.y;
+		y += this.dCard.y;
+		this.cFlash = new Vector2(x, y);
+
+		// c platform
+
+		x = this.cFlash.x;
+		y = this.cFlash.y;
+		y += this.dCard.y;
+		y += this.dCard.y;
+		this.cPlatform = new Vector2(x, y);
+
+		// c stock
+
+		x = this.cPlatform.x;
+		y = this.cPlatform.y;
+		y += this.dCard.y;
+		y += this.dCard.y;
+		this.cStock = new Vector2(x, y);
 
 	}
 

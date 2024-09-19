@@ -1,5 +1,8 @@
 package gameStatesDefault;
 
+import cards.Card;
+import cards.CardBot;
+import cards.CardMachine;
 import controller.Credentials;
 import enums.EText;
 import javafx.scene.input.KeyCode;
@@ -89,6 +92,20 @@ public abstract class GameState {
 
 	protected final SelectImageViewManager getSelectImageViewManager() {
 		return SelectImageViewManager.INSTANCE;
+	}
+
+	public final void handleCardPressedPrimary(Card card) {
+
+		card.print();
+
+	}
+
+	protected final void handleCardBotPressed(CardBot cardBot) {
+
+	}
+
+	protected final void handleCardMachinePressed(CardMachine cardMachine) {
+
 	}
 
 }

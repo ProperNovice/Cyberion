@@ -1,6 +1,7 @@
 package controller;
 
 import enums.EModel;
+import utils.Logger;
 
 public class CardBotFeatures {
 
@@ -20,6 +21,13 @@ public class CardBotFeatures {
 
 	public int getSize() {
 		return this.size;
+	}
+
+	public void print() {
+
+		Logger.INSTANCE.log("model - " + this.eModel);
+		Logger.INSTANCE.log("size - " + this.size);
+
 	}
 
 }

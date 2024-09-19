@@ -4,22 +4,27 @@ import controller.CardBotFeatures;
 
 public abstract class CardBot extends Card {
 
-	private CardBotFeatures botFeatures = null;
+	private CardBotFeatures cardBotFeatures = null;
 
-	public CardBot(CardBotFeatures botFeature) {
+	public CardBot(CardBotFeatures cardBotFeatures) {
 
-		this.botFeatures = botFeature;
+		this.cardBotFeatures = cardBotFeatures;
 		createImageView(getFilePath());
 
 	}
 
 	public final CardBotFeatures getBotFeatures() {
-		return this.botFeatures;
+		return this.cardBotFeatures;
 	}
 
 	@Override
 	protected String getFilePath() {
 		return super.getFilePath() + "bots/";
+	}
+
+	@Override
+	protected void printCredentials() {
+		this.cardBotFeatures.print();
 	}
 
 }

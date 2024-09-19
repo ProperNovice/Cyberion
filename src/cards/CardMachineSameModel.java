@@ -2,6 +2,7 @@ package cards;
 
 import enums.EMachineStage;
 import enums.EModel;
+import utils.Logger;
 
 public class CardMachineSameModel extends CardMachine {
 
@@ -28,6 +29,12 @@ public class CardMachineSameModel extends CardMachine {
 
 		super.createImageView(filePath);
 
+	}
+
+	@Override
+	protected void printCredentials() {
+		super.printCredentials();
+		Logger.INSTANCE.log(this.eModel);
 	}
 
 }

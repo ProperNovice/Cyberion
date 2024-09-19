@@ -1,15 +1,14 @@
 package gameStates;
 
-import cards.CardMachineStraight;
-import enums.EMachineStage;
 import gameStatesDefault.GameState;
+import lists.ListFactory;
 
 public class JUnit extends GameState {
 
 	@Override
 	public void execute() {
-
-		new CardMachineStraight(EMachineStage.III);
+		
+		ListFactory.values();
 
 	}
 
