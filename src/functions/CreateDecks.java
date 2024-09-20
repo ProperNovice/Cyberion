@@ -1,6 +1,6 @@
 package functions;
 
-import cardBackImageViews.CardBot;
+import cards.CardBot;
 import cards.CardMachine;
 import controller.CardBacks;
 import controller.Decks;

@@ -1,6 +1,5 @@
-package cardBackImageViews;
+package cards;
 
-import cards.Card;
 import controller.CardBotFeatures;
 import enums.EModel;
 

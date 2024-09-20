@@ -1,6 +1,6 @@
 package controller;
 
-import cardBackImageViews.CardBot;
+import cards.CardBot;
 import cards.CardMachine;
 import utils.Enums.RearrangeTypeEnum;
 import utils.ListImageViewAbles;
