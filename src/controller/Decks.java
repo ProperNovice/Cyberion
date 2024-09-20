@@ -1,12 +1,14 @@
 package controller;
 
-import cards.CardBot;
+import cardBackImageViews.CardBot;
 import cards.CardMachine;
 import cards.CardMachineGreaterThan;
 import cards.CardMachineIdentical;
 import cards.CardMachineLessThan;
+import cards.CardMachinePairs;
 import cards.CardMachineSameModel;
 import cards.CardMachineSameSize;
+import cards.CardMachineStraight;
 import cards.CardRobot;
 import enums.EMachineStage;
 import enums.EModel;
@@ -33,11 +35,6 @@ public enum Decks {
 		createDeckRobots(listModels);
 		createDeckMachines(listModels);
 
-		System.out.println(this.deckRobots.size());
-
-		for (EMachineStage eMachineStage : EMachineStage.values())
-			System.out.println(this.deckMachines.getValue(eMachineStage).size());
-
 	}
 
 	private void createDeckRobots(ArrayList<EModel> listModels) {
@@ -55,8 +52,6 @@ public enum Decks {
 			this.deckMachines.put(eMachineStage, new ArrayList<>());
 
 		for (EMachineStage eMachineStage : EMachineStage.values()) {
-
-			int a = 1; // TODO
 
 			ArrayList<CardMachine> list = this.deckMachines.getValue(eMachineStage);
 
@@ -77,13 +72,18 @@ public enum Decks {
 
 			list.addLast(new CardMachineIdentical(eMachineStage));
 
-			if (a == 1) // TODO
-				continue;
-
 			// addition
 
 			list.addLast(new CardMachineGreaterThan(eMachineStage));
 			list.addLast(new CardMachineLessThan(eMachineStage));
+
+			// pairs
+
+			list.addLast(new CardMachinePairs(eMachineStage));
+
+			// straight
+
+			list.addLast(new CardMachineStraight(eMachineStage));
 
 		}
 

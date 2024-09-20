@@ -1,9 +1,6 @@
 package controller;
 
-import cards.CardBack;
-import cards.CardBackBot;
-import utils.Interfaces.IImageViewAble;
-import utils.ListImageViewAbles;
+import cardBackImageViews.CardBackBot;
 
 public enum CardBacks {
 
@@ -21,25 +18,21 @@ public enum CardBacks {
 
 	public void execute() {
 
-		executeCardBot();
+		executeRobotDeck();
 
 	}
 
-	private void executeCardBot() {
-		executeList(Lists.INSTANCE.robotDeck, this.cardBackBot);
-	}
-
-	private void executeList(ListImageViewAbles<? extends IImageViewAble> list, CardBack cardBack) {
+	private void executeRobotDeck() {
 
 		boolean visibility = true;
 
 		if (Lists.INSTANCE.robotDeck.getArrayList().isEmpty())
 			visibility = false;
 
-		cardBack.getImageView().setVisible(visibility);
+		this.cardBackBot.getImageView().setVisible(visibility);
 
 		if (visibility)
-			cardBack.getImageView().toFront();
+			this.cardBackBot.getImageView().toFront();
 
 	}
 

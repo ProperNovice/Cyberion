@@ -2,6 +2,7 @@ package cards;
 
 import controller.MachineTypeCredentials;
 import enums.EMachineStage;
+import utils.Logger;
 
 public class CardMachineLessThan extends CardMachineAddition {
 
@@ -16,6 +17,14 @@ public class CardMachineLessThan extends CardMachineAddition {
 		filePath += ".jpg";
 
 		super.createImageView(filePath);
+
+	}
+
+	@Override
+	protected void printCredentials() {
+
+		super.printCredentials();
+		Logger.INSTANCE.log("less than - " + getMachineTypeCredentials().getLessThanValue());
 
 	}
 

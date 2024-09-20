@@ -1,7 +1,7 @@
 package gameStatesDefault;
 
+import cardBackImageViews.CardBot;
 import cards.Card;
-import cards.CardBot;
 import cards.CardMachine;
 import controller.Credentials;
 import enums.EText;

@@ -1,5 +1,6 @@
 package cards;
 
+import cardBackImageViews.CardBot;
 import enums.EModel;
 
 public class CardRobot extends CardBot {

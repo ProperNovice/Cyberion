@@ -1,4 +1,4 @@
-package cards;
+package cardBackImageViews;
 
 import utils.ImageView;
 import utils.Interfaces.IImageViewAble;

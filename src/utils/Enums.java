@@ -59,11 +59,17 @@ public class Enums {
 
 		public void loadListsOriginal() {
 
-			for (ListImageViewAbles<IImageViewAble> list : this.lists)
-				list.getArrayList().clear();
+			clearLists();
 
 			for (ListImageViewAbles<IImageViewAble> list : this.lists)
 				list.getArrayList().loadOriginal();
+
+		}
+
+		public void clearLists() {
+
+			for (ListImageViewAbles<IImageViewAble> list : this.lists)
+				list.getArrayList().clear();
 
 		}
 

@@ -1,6 +1,7 @@
 package controller;
 
-import cards.CardBot;
+import cardBackImageViews.CardBot;
+import cards.CardMachine;
 import utils.Enums.RearrangeTypeEnum;
 import utils.ListImageViewAbles;
 
@@ -12,9 +13,9 @@ public enum Lists {
 	public ListImageViewAbles<CardBot> flash = new ListImageViewAbles<>();
 	public ListImageViewAbles<CardBot> platform = new ListImageViewAbles<>();
 	public ListImageViewAbles<CardBot> stock = new ListImageViewAbles<>();
-	public ListImageViewAbles<CardBot> machineDeck = new ListImageViewAbles<>();
+	public ListImageViewAbles<CardMachine> machineDeck = new ListImageViewAbles<>();
 	public ListImageViewAbles<CardBot> robotDeck = new ListImageViewAbles<>();
-	public ListImageViewAbles<CardBot> experiencePile = new ListImageViewAbles<>();
+	public ListImageViewAbles<CardMachine> experiencePile = new ListImageViewAbles<>();
 	public ListImageViewAbles<CardBot> discard = new ListImageViewAbles<>();
 
 	private Lists() {

@@ -1,4 +1,4 @@
-package cards;
+package cardBackImageViews;
 
 public class CardBackBot extends CardBack {
 
