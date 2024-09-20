@@ -1,6 +1,7 @@
 package cards;
 
 import enums.EMachineStage;
+import utils.Logger;
 
 public class CardMachineIdentical extends CardMachine {
 
@@ -16,6 +17,11 @@ public class CardMachineIdentical extends CardMachine {
 
 		super.createImageView(fileName);
 
+	}
+
+	@Override
+	protected void printCredentials() {
+		Logger.INSTANCE.log("robots amount - " + getMachineTypeCredentials().getIdenticalRobots());
 	}
 
 }

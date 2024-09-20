@@ -1,9 +1,9 @@
 package machineStages;
 
-public class MachineTypeCredentialsStageI extends MachineTypeCredentials {
+public class MachineTypeCredentialsStageI extends MachineTypeCredentialsStage {
 
 	@Override
-	public int robotsWithSameFeature() {
+	public int getRobotsWithSameFeature() {
 		return 2;
 	}
 

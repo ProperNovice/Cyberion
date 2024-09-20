@@ -32,8 +32,12 @@ public class CardMachineSameSize extends CardMachine {
 
 	@Override
 	protected void printCredentials() {
+
 		super.printCredentials();
-		Logger.INSTANCE.log(this.size);
+		Logger.INSTANCE
+				.log("robots amount - " + getMachineTypeCredentials().getRobotsWithSameFeature());
+		Logger.INSTANCE.log("size - " + this.size);
+
 	}
 
 }

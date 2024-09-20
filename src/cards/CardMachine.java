@@ -1,7 +1,7 @@
 package cards;
 
 import enums.EMachineStage;
-import machineStages.MachineTypeCredentials;
+import machineStages.MachineTypeCredentialsStage;
 import machineStages.MachineTypeCredentialsStageI;
 import machineStages.MachineTypeCredentialsStageII;
 import machineStages.MachineTypeCredentialsStageIII;
@@ -9,7 +9,7 @@ import utils.Logger;
 
 public abstract class CardMachine extends Card {
 
-	private MachineTypeCredentials machineTypeCredentials = null;
+	private MachineTypeCredentialsStage machineTypeCredentials = null;
 
 	public CardMachine(EMachineStage eMachineStage) {
 		createMachineTypeCredentials(eMachineStage);
@@ -20,7 +20,7 @@ public abstract class CardMachine extends Card {
 		return super.getFilePath() + "machine/";
 	}
 
-	public final MachineTypeCredentials getMachineTypeCredentials() {
+	public final MachineTypeCredentialsStage getMachineTypeCredentials() {
 		return this.machineTypeCredentials;
 	}
 

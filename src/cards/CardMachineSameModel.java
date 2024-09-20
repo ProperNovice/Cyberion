@@ -33,8 +33,12 @@ public class CardMachineSameModel extends CardMachine {
 
 	@Override
 	protected void printCredentials() {
+
 		super.printCredentials();
 		Logger.INSTANCE.log(this.eModel);
+		Logger.INSTANCE
+				.log("robots amount - " + getMachineTypeCredentials().getRobotsWithSameFeature());
+
 	}
 
 }
