@@ -1,14 +1,17 @@
 package controller;
 
+import cards.CardBot;
 import cards.CardRobot;
 import enums.EModel;
 import utils.ArrayList;
 
-public enum InstantiateComponents {
+public enum Decks {
 
 	INSTANCE;
 
-	private InstantiateComponents() {
+	private ArrayList<CardBot> deckRobots = new ArrayList<>();
+
+	private Decks() {
 
 		ArrayList<EModel> listModels = new ArrayList<>();
 
@@ -18,12 +21,11 @@ public enum InstantiateComponents {
 		listModels.addLast(EModel.SIRENBOT);
 		listModels.addLast(EModel.STOCKBOT);
 
-		createCardRobots(listModels);
-		CardBacks.values();
+		createDeckRobots(listModels);
 
 	}
 
-	private void createCardRobots(ArrayList<EModel> listModels) {
+	private void createDeckRobots(ArrayList<EModel> listModels) {
 
 		for (int cardAmount = 1; cardAmount <= 2; cardAmount++)
 			for (EModel eModel : listModels)
