@@ -1,11 +1,11 @@
 package controller;
 
 import cardBackImageViews.CardBackBot;
+import cardBackImageViews.CardBackMachine;
+import cardBackImageViews.CardBackmachineStageI;
+import cardBackImageViews.CardBackmachineStageII;
+import cardBackImageViews.CardBackmachineStageIII;
 import enums.EMachineStage;
-import images.CardBackMachine;
-import images.CardBackmachineStageI;
-import images.CardBackmachineStageII;
-import images.CardBackmachineStageIII;
 import utils.HashMap;
 
 public enum CardBacks {

@@ -1,4 +1,4 @@
-package images;
+package cardBackImageViews;
 
 public class CardBackmachineStageI extends CardBackMachine {
 

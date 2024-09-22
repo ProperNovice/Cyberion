@@ -1,6 +1,4 @@
-package images;
-
-import cardBackImageViews.CardBack;
+package cardBackImageViews;
 
 public abstract class CardBackMachine extends CardBack {
 

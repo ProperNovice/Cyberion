@@ -11,6 +11,8 @@ public enum EText {
 	VOID_INDICATOR("", TextTypeEnum.INDICATOR), VOID_OPTION("", TextTypeEnum.OPTION),
 	YOU_LOST("You lost", TextTypeEnum.INDICATOR), YOU_WON("You won", TextTypeEnum.INDICATOR),
 
+	FILL_PLATFORM("Fill platform", TextTypeEnum.OPTION),
+
 	;
 
 	private String string = null;

@@ -9,7 +9,7 @@ public enum Credentials {
 
 	public String primaryStageTitle = "Cyberion", numbersImageViewColor = "black";
 	public boolean colliderVisibility = true;
-	public final double stagePixesOnTheLeft = 180, gapBetweenBorders = 10, textHeight = 50,
+	public final double stagePixesOnTheLeft = 180, gapBetweenBorders = 10, textHeight = 75,
 			selectEventHandlerAbleDimension = 100, imageViewCloneWidth = 200, animationStep = 4,
 			cameraViewSpots = 1;
 	public Vector2 dFrame, dGapBetweenComponents, dCameraView, dGapBetweenComponentsLineCast;
@@ -47,13 +47,6 @@ public enum Credentials {
 
 		this.dCameraView = new Vector2(1, 1);
 
-		// c text panel
-
-		x = 0;
-		y = 0;
-
-		this.cTextPanel = new Vector2(x, y);
-
 		// c image view indicator
 
 		x = this.gapBetweenBorders;
@@ -66,12 +59,26 @@ public enum Credentials {
 		y = 334;
 		this.dCard = new Vector2(x, y);
 
+		// c experience pile
+
+		x = this.gapBetweenBorders;
+		y = this.gapBetweenBorders;
+		this.cExperiencePile = new Vector2(x, y);
+
+		// c machine deck
+
+		x = this.cExperiencePile.x;
+		x += this.dCard.x;
+		x += this.dGapBetweenComponents.x;
+		y = this.cExperiencePile.y;
+		this.cMachineDeck = new Vector2(x, y);
+
 		// c factory
 
-		x = this.dFrame.x / 2;
-		x -= 2.5 * this.dCard.x;
-		x -= 2 * this.dGapBetweenComponents.x;
-		y = this.gapBetweenBorders;
+		x = this.cMachineDeck.x;
+		x += this.dCard.x;
+		x += this.dGapBetweenComponents.x;
+		y = this.cMachineDeck.y;
 		this.cFactory = new Vector2(x, y);
 
 		// c flash
@@ -79,52 +86,48 @@ public enum Credentials {
 		x = this.cFactory.x;
 		y = this.cFactory.y;
 		y += this.dCard.y;
-		y += this.dCard.y;
+		y += this.dGapBetweenComponents.y;
 		this.cFlash = new Vector2(x, y);
+
+		// c discard
+
+		x = this.cExperiencePile.y;
+		y = this.cFlash.y;
+		y += this.dCard.y;
+		y += this.dGapBetweenComponents.y;
+		this.cDiscard = new Vector2(x, y);
+
+		// c robot deck
+
+		x = this.cDiscard.x;
+		x += this.dCard.x;
+		x += this.dGapBetweenComponents.x;
+		y = this.cDiscard.y;
+		this.cRobotDeck = new Vector2(x, y);
 
 		// c platform
 
 		x = this.cFlash.x;
 		y = this.cFlash.y;
+		y += this.dCard.y;
+		y += this.dGapBetweenComponents.y;
 		this.cPlatform = new Vector2(x, y);
 
 		// c stock
 
 		x = this.cPlatform.x;
 		y = this.cPlatform.y;
+		y += this.dCard.y;
+		y += this.dGapBetweenComponents.y;
 		this.cStock = new Vector2(x, y);
 
-		// c machine deck
+		// c text panel
 
 		x = this.cFactory.x;
-		x -= this.dCard.x;
-		x -= this.dGapBetweenComponents.x;
+		x += 5 * (this.dCard.x + this.dGapBetweenComponents.x);
 		y = this.cFactory.y;
-		this.cMachineDeck = new Vector2(x, y);
 
-		// c experience pile
-
-		x = this.cMachineDeck.x;
-		x -= this.dCard.x;
-		x -= this.dGapBetweenComponents.x;
-		y = this.cMachineDeck.y;
-		this.cExperiencePile = new Vector2(x, y);
-
-		// c robot deck
-
-		x = this.cPlatform.x;
-		x -= this.dCard.x;
-		x -= this.dGapBetweenComponents.x;
-		y = this.cPlatform.y;
-		this.cRobotDeck = new Vector2(x, y);
-
-		// c discard
-
-		x = this.cRobotDeck.x;
-		x -= this.dCard.x;
-		x -= this.dGapBetweenComponents.x;
-		y = this.cRobotDeck.y;
-		this.cDiscard = new Vector2(x, y);
+		this.cTextPanel = new Vector2(x, y);
 
 	}
 
