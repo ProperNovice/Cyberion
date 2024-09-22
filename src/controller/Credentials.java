@@ -27,10 +27,16 @@ public enum Credentials {
 
 		// frame
 
-		this.dFrame = new Vector2(2560 - 4, 1368);
+		this.dFrame = new Vector2(2560, 1440);
+		this.dFrame.x = java.awt.Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		this.dFrame.y = java.awt.Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 
-		if (!this.primaryStageFullScreen)
-			this.dFrame.x -= 636;
+		if (!this.primaryStageFullScreen) {
+
+			this.dFrame.x -= 636 + 4;
+			this.dFrame.y -= 72;
+
+		}
 
 		// gaps
 

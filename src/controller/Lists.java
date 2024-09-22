@@ -44,11 +44,13 @@ public enum Lists {
 
 		this.machineDeck.getListCredentials().coordinatesList = Credentials.INSTANCE.cMachineDeck;
 		this.machineDeck.getListCredentials().rearrangeTypeEnum = RearrangeTypeEnum.STATIC;
+		this.machineDeck.getListCredentials().showListSize = true;
 
 		// robot deck
 
 		this.robotDeck.getListCredentials().coordinatesList = Credentials.INSTANCE.cRobotDeck;
 		this.robotDeck.getListCredentials().rearrangeTypeEnum = RearrangeTypeEnum.STATIC;
+		this.robotDeck.getListCredentials().showListSize = true;
 
 		// experience pile
 

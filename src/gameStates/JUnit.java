@@ -7,7 +7,7 @@ public class JUnit extends GameState {
 
 	@Override
 	public void execute() {
-		
+
 		CreateDecks.INSTANCE.execute();
 
 	}

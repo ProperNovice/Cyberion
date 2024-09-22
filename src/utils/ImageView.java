@@ -126,6 +126,22 @@ public class ImageView implements INode {
 		relocateBottomLeft(vector2.x, vector2.y);
 	}
 
+	public void relocateTopRight(double x, double y) {
+		relocateTopLeft(x - this.getWidth(), y);
+	}
+
+	public void relocateTopRight(Vector2 vector2) {
+		relocateTopRight(vector2.x, vector2.y);
+	}
+
+	public void relocateBottomRight(double x, double y) {
+		relocateTopLeft(x - this.getWidth(), y - this.getHeight());
+	}
+
+	public void relocateBottomRight(Vector2 vector2) {
+		relocateBottomRight(vector2.x, vector2.y);
+	}
+
 	private void handleCamera() {
 
 		IImageViewAble imageViewAble = MapImageViews.INSTANCE.getImageViewsMap().getKey(this);
