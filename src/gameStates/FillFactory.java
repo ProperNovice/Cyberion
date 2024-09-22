@@ -17,7 +17,8 @@ public class FillFactory extends GameState {
 	@Override
 	protected void executeTextOption(EText eText) {
 
-		while (!Lists.INSTANCE.factory.getArrayList().isMaxCapacity())
+		while (!Lists.INSTANCE.factory.getArrayList().isMaxCapacity()
+				&& !Lists.INSTANCE.machineDeck.getArrayList().isEmpty())
 			MoveCardFromMachineDeckToFactory.INSTANCE.execute();
 
 		proceedToNextGameState();
