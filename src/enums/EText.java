@@ -12,6 +12,7 @@ public enum EText {
 	YOU_LOST("You lost", TextTypeEnum.INDICATOR), YOU_WON("You won", TextTypeEnum.INDICATOR),
 
 	FILL_PLATFORM("Fill platform", TextTypeEnum.OPTION),
+	FILL_FACTORY("Fill factory", TextTypeEnum.OPTION),
 
 	;
 

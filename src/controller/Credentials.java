@@ -9,7 +9,7 @@ public enum Credentials {
 
 	public String primaryStageTitle = "Cyberion", numbersImageViewColor = "black";
 	public boolean colliderVisibility = true;
-	public final double stagePixesOnTheLeft = 180, gapBetweenBorders = 10, textHeight = 75,
+	public final double stagePixesOnTheLeft = 180, gapBetweenBorders = 10, textHeight = 50,
 			selectEventHandlerAbleDimension = 100, imageViewCloneWidth = 200, animationStep = 4,
 			cameraViewSpots = 1;
 	public Vector2 dFrame, dGapBetweenComponents, dCameraView, dGapBetweenComponentsLineCast;

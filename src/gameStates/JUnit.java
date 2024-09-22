@@ -11,7 +11,10 @@ public class JUnit extends GameState {
 
 		CreateDecks.INSTANCE.execute();
 
-		Flow.INSTANCE.executeGameState(FillPlatform.class);
+		Flow.INSTANCE.getFlow().addLast(FillPlatform.class);
+		Flow.INSTANCE.getFlow().addLast(FillFactory.class);
+
+		proceedToNextGameState();
 
 	}
 

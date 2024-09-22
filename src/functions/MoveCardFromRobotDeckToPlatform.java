@@ -3,7 +3,7 @@ package functions;
 import cards.CardBot;
 import controller.Lists;
 
-public enum AddCardFromRobotDeckToPlatform {
+public enum MoveCardFromRobotDeckToPlatform {
 
 	INSTANCE;
 

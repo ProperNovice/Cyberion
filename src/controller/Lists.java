@@ -9,7 +9,7 @@ public enum Lists {
 
 	INSTANCE;
 
-	public ListImageViewAbles<CardBot> factory = new ListImageViewAbles<>();
+	public ListImageViewAbles<CardMachine> factory = new ListImageViewAbles<>();
 	public ListImageViewAbles<CardBot> flash = new ListImageViewAbles<>();
 	public ListImageViewAbles<CardBot> platform = new ListImageViewAbles<>();
 	public ListImageViewAbles<CardBot> stock = new ListImageViewAbles<>();

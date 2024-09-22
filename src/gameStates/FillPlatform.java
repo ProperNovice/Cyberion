@@ -2,7 +2,7 @@ package gameStates;
 
 import controller.Lists;
 import enums.EText;
-import functions.AddCardFromRobotDeckToPlatform;
+import functions.MoveCardFromRobotDeckToPlatform;
 import gameStatesDefault.GameState;
 
 public class FillPlatform extends GameState {
@@ -18,7 +18,7 @@ public class FillPlatform extends GameState {
 	protected void executeTextOption(EText eText) {
 
 		while (!Lists.INSTANCE.platform.getArrayList().isMaxCapacity())
-			AddCardFromRobotDeckToPlatform.INSTANCE.execute();
+			MoveCardFromRobotDeckToPlatform.INSTANCE.execute();
 
 		proceedToNextGameState();
 
