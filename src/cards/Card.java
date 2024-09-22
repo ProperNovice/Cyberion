@@ -36,6 +36,8 @@ public abstract class Card implements IImageViewAble {
 		Logger.INSTANCE.newLine();
 		Logger.INSTANCE.log("*/");
 
+		Logger.INSTANCE.newLine();
+
 	}
 
 	protected void printCredentials() {

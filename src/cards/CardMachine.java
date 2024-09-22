@@ -10,9 +10,13 @@ import utils.Logger;
 public abstract class CardMachine extends Card {
 
 	private MachineTypeCredentialsStage machineTypeCredentials = null;
+	private EMachineStage eMachineStage = null;
 
 	public CardMachine(EMachineStage eMachineStage) {
+
+		this.eMachineStage = eMachineStage;
 		createMachineTypeCredentials(eMachineStage);
+
 	}
 
 	@Override
@@ -47,6 +51,10 @@ public abstract class CardMachine extends Card {
 	@Override
 	protected void printCredentials() {
 		Logger.INSTANCE.log(this.machineTypeCredentials.getClass().getSimpleName());
+	}
+
+	public EMachineStage getEMachineStage() {
+		return this.eMachineStage;
 	}
 
 }

@@ -112,6 +112,8 @@ public class Cyberion extends Application {
 
 		primaryStage.setY(y);
 
+		primaryStage.setFullScreen(Credentials.INSTANCE.primaryStageFullScreen);
+
 		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 
 			@Override
