@@ -15,7 +15,7 @@ public enum Credentials {
 	public Vector2 dFrame, dGapBetweenComponents, dCameraView, dGapBetweenComponentsLineCast;
 	public Vector2 cTextPanel, cImageViewClone;
 	public RearrangeTypeEnum rearrangeTypeEnumText = RearrangeTypeEnum.LINEAR;
-	public boolean primaryStageFullScreen = true;
+	public boolean primaryStageFullScreen = false;
 
 	public Vector2 dCard;
 	public Vector2 cFactory, cFlash, cPlatform, cStock, cMachineDeck, cRobotDeck, cExperiencePile,

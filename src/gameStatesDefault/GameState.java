@@ -96,7 +96,10 @@ public abstract class GameState {
 
 	public final void handleCardPressedPrimary(Card card) {
 
-		card.print();
+		if (card instanceof CardBot)
+			handleCardBotPressed((CardBot) card);
+		else if (card instanceof CardMachine)
+			handleCardMachinePressed((CardMachine) card);
 
 	}
 
