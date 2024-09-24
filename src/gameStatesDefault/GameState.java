@@ -95,6 +95,10 @@ public abstract class GameState {
 		return SelectImageViewManager.INSTANCE;
 	}
 
+	protected final Lists lists() {
+		return Lists.INSTANCE;
+	}
+
 	public final void handleCardPressedPrimary(Card card) {
 
 		if (card instanceof CardBot)

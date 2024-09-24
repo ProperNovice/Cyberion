@@ -57,6 +57,7 @@ public enum Lists {
 		this.experiencePile
 				.getListCredentials().coordinatesList = Credentials.INSTANCE.cExperiencePile;
 		this.experiencePile.getListCredentials().rearrangeTypeEnum = RearrangeTypeEnum.STATIC;
+		this.experiencePile.getListCredentials().showListSize = true;
 
 		// discard
 
