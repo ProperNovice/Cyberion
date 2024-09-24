@@ -8,6 +8,7 @@ import utils.HashMap;
 import utils.ImageView;
 import utils.Interfaces.IImageViewAble;
 import utils.Interfaces.ISelectCoordinatesAble;
+import utils.ShutDown;
 import utils.Vector2;
 
 public enum Mainframe {
@@ -34,6 +35,14 @@ public enum Mainframe {
 
 	}
 
+	public ELevel getDeviousCogFigureLevel(EModel eModel) {
+		return this.mainframeModels.getValue(eModel).getDeviousCogFigureLevel();
+	}
+
+	public void upgradeMainFrameModel(EModel eModel) {
+		this.mainframeModels.getValue(eModel).upgrade();
+	}
+
 	private class MainFrameModel {
 
 		private Vector2 vector2 = null;
@@ -51,6 +60,49 @@ public enum Mainframe {
 
 				this.mainframeLevels.put(eLevel, new MainframeLevel(xLevel, yLevel));
 				xLevel += 190;
+
+				if (eLevel.equals(ELevel.I))
+					this.mainframeLevels.getValue(eLevel)
+							.addRelocateDeviousCogFigure(new DeviousCogFigure());
+
+			}
+
+		}
+
+		public ELevel getDeviousCogFigureLevel() {
+
+			for (ELevel eLevel : ELevel.values())
+				if (this.mainframeLevels.getValue(eLevel).containsDeviousCogFigure())
+					return eLevel;
+
+			ShutDown.INSTANCE.execute();
+
+			return null;
+
+		}
+
+		public void upgrade() {
+
+			DeviousCogFigure deviousCogFigure = null;
+			boolean upgradeToThisLevel = false;
+
+			for (ELevel eLevel : ELevel.values()) {
+
+				if (this.mainframeLevels.getValue(eLevel).containsDeviousCogFigure()) {
+
+					deviousCogFigure = this.mainframeLevels.getValue(eLevel)
+							.removeDeviousCogFigure();
+
+					upgradeToThisLevel = true;
+
+				} else if (upgradeToThisLevel) {
+
+					this.mainframeLevels.getValue(eLevel)
+							.addRelocateDeviousCogFigure(deviousCogFigure);
+
+					return;
+
+				}
 
 			}
 
