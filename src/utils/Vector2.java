@@ -40,6 +40,11 @@ public class Vector2 {
 		addY(vector2.y);
 	}
 
+	public void addXY(double x, double y) {
+		addX(x);
+		addY(y);
+	}
+
 	public void substractVector2(Vector2 vector2) {
 		substractX(vector2.x);
 		substractY(vector2.y);
@@ -59,6 +64,11 @@ public class Vector2 {
 
 	public void substractY(Vector2 vector2) {
 		substractY(vector2.y);
+	}
+
+	public void substractXY(double x, double y) {
+		substractX(x);
+		substractY(y);
 	}
 
 	public void print() {

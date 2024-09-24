@@ -4,6 +4,7 @@ import cards.Card;
 import cards.CardBot;
 import cards.CardMachine;
 import controller.Credentials;
+import controller.Lists;
 import enums.EText;
 import javafx.scene.input.KeyCode;
 import utils.Animation;
@@ -104,6 +105,25 @@ public abstract class GameState {
 	}
 
 	protected final void handleCardBotPressed(CardBot cardBot) {
+
+		if (Lists.INSTANCE.flash.getArrayList().contains(cardBot))
+			handleCardBotPressedFlash(cardBot);
+		else if (Lists.INSTANCE.platform.getArrayList().contains(cardBot))
+			handleCardBotPressedPlatform(cardBot);
+		else if (Lists.INSTANCE.stock.getArrayList().contains(cardBot))
+			handleCardBotPressedStock(cardBot);
+
+	}
+
+	protected void handleCardBotPressedFlash(CardBot cardBot) {
+
+	}
+
+	protected void handleCardBotPressedPlatform(CardBot cardBot) {
+
+	}
+
+	protected void handleCardBotPressedStock(CardBot cardBot) {
 
 	}
 

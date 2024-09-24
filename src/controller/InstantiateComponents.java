@@ -1,5 +1,7 @@
 package controller;
 
+import rest.Mainframe;
+
 public enum InstantiateComponents {
 
 	INSTANCE;
@@ -8,6 +10,7 @@ public enum InstantiateComponents {
 
 		Decks.values();
 		CardBacks.values();
+		Mainframe.values();
 
 	}
 

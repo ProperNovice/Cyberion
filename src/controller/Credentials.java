@@ -15,11 +15,11 @@ public enum Credentials {
 	public Vector2 dFrame, dGapBetweenComponents, dCameraView, dGapBetweenComponentsLineCast;
 	public Vector2 cTextPanel, cImageViewClone;
 	public RearrangeTypeEnum rearrangeTypeEnumText = RearrangeTypeEnum.LINEAR;
-	public boolean primaryStageFullScreen = false;
+	public boolean primaryStageFullScreen = true;
 
-	public Vector2 dCard;
+	public Vector2 dCard, dMainframe;
 	public Vector2 cFactory, cFlash, cPlatform, cStock, cMachineDeck, cRobotDeck, cExperiencePile,
-			cDiscard;
+			cDiscard, cMainframe;
 
 	private Credentials() {
 
@@ -121,12 +121,24 @@ public enum Credentials {
 		y += this.dGapBetweenComponents.y;
 		this.cStock = new Vector2(x, y);
 
+		// d mainframe
+
+		x = 951;
+		y = 479;
+		this.dMainframe = new Vector2(x, y);
+
+		// c mainframe
+
+		x = this.cExperiencePile.x;
+		x += 7 * (this.dCard.x + this.dGapBetweenComponents.x);
+		y = this.cExperiencePile.y;
+		this.cMainframe = new Vector2(x, y);
+
 		// c text panel
 
-		x = this.cFactory.x;
-		x += 5 * (this.dCard.x + this.dGapBetweenComponents.x);
-		y = this.cFactory.y;
-
+		x = this.cMainframe.x;
+		y = this.cMainframe.y;
+		y += this.dMainframe.y + this.dGapBetweenComponents.y;
 		this.cTextPanel = new Vector2(x, y);
 
 	}

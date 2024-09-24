@@ -95,6 +95,9 @@ public class Text implements IUpdateAble {
 		this.textOption.getImageView().setWidth(width);
 		this.textOption.getImageView().setHeight(height);
 
+		if (this.listSymbols.isEmpty())
+			ShutDown.INSTANCE.execute();
+
 		this.textOption.getImageView().relocateTopLeft(
 				this.listSymbols.getFirst().getImageView().getCoordinatesTopLeft());
 
