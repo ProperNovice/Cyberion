@@ -17,7 +17,7 @@ public enum Credentials {
 	public RearrangeTypeEnum rearrangeTypeEnumText = RearrangeTypeEnum.LINEAR;
 	public boolean primaryStageFullScreen = true;
 
-	public Vector2 dCard, dMainframe;
+	public Vector2 dCard, dMainframe, dDeviousCogFigure;
 	public Vector2 cFactory, cFlash, cPlatform, cStock, cMachineDeck, cRobotDeck, cExperiencePile,
 			cDiscard, cMainframe;
 
@@ -140,6 +140,12 @@ public enum Credentials {
 		y = this.cMainframe.y;
 		y += this.dMainframe.y + this.dGapBetweenComponents.y;
 		this.cTextPanel = new Vector2(x, y);
+
+		// d devious cog figure
+
+		x = 58;
+		y = 51;
+		this.dDeviousCogFigure = new Vector2(x, y);
 
 	}
 

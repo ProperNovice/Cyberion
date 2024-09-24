@@ -1,6 +1,6 @@
 package controller;
 
-import rest.Mainframe;
+import model.Mainframe;
 
 public enum InstantiateComponents {
 

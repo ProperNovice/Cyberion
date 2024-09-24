@@ -1,4 +1,4 @@
-package rest;
+package model;
 
 import enums.ELayerZ;
 import utils.ImageView;

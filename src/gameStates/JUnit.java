@@ -16,11 +16,6 @@ public class JUnit extends GameState {
 
 		proceedToNextGameState();
 
-		double x = 122, y = 64;
-
-		System.out.println(x + 58 / 2);
-		System.out.println(y + (double) 51 / 2);
-
 	}
 
 }
