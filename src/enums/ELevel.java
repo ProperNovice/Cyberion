@@ -12,7 +12,7 @@ public enum ELevel {
 		this.getFailsafeToken = getFailsafeToken;
 	}
 
-	public int upgradeMachineCardsRequired() {
+	public int getUpgradeMachineCardsRequired() {
 		return this.upgradeMachineCardsRequired;
 	}
 

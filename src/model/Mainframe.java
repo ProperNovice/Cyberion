@@ -4,6 +4,7 @@ import controller.Credentials;
 import enums.ELayerZ;
 import enums.ELevel;
 import enums.EModel;
+import utils.ArrayList;
 import utils.HashMap;
 import utils.ImageView;
 import utils.Interfaces.IImageViewAble;
@@ -41,6 +42,27 @@ public enum Mainframe {
 
 	public void upgradeMainFrameModel(EModel eModel) {
 		this.mainframeModels.getValue(eModel).upgrade();
+	}
+
+	public ELevel getLowestELevel() {
+
+		ArrayList<ELevel> list = new ArrayList<>();
+
+		for (EModel eModel : this.mainframeModels) {
+
+			ELevel eLevel = this.mainframeModels.getValue(eModel).getDeviousCogFigureLevel();
+			list.addLast(eLevel);
+
+		}
+
+		for (ELevel eLevel : ELevel.values())
+			if (list.contains(eLevel))
+				return eLevel;
+
+		ShutDown.INSTANCE.execute();
+
+		return null;
+
 	}
 
 	private class MainFrameModel {

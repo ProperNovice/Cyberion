@@ -40,4 +40,8 @@ public class CardMachineSameSize extends CardMachine {
 
 	}
 
+	public int getSize() {
+		return this.size;
+	}
+
 }

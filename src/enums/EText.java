@@ -13,6 +13,10 @@ public enum EText {
 
 	FILL_PLATFORM("Fill platform", TextTypeEnum.OPTION),
 	FILL_FACTORY("Fill factory", TextTypeEnum.OPTION),
+	INTERVATION("Intervation", TextTypeEnum.INDICATOR),
+	REPAIR_OPTION("Repair", TextTypeEnum.OPTION), TRIGGER("Trigger", TextTypeEnum.OPTION),
+	UPGRADE("Upgrade", TextTypeEnum.OPTION),
+	CHOOSE_BOTS_AND_MACHINE("Choose bots and machine", TextTypeEnum.INDICATOR),
 
 	;
 

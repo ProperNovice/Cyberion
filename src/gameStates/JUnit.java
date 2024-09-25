@@ -1,12 +1,17 @@
 package gameStates;
 
+import cards.CardBot;
 import cards.CardMachine;
+import cards.CardMachineSameModel;
+import cards.CardMachineSameSize;
 import cards.CardRobot;
 import controller.Lists;
+import enums.EMachineStage;
 import enums.EModel;
 import functions.CreateDecks;
 import gameStatesDefault.GameState;
 import utils.Flow;
+import utils.ListImageViewAbles;
 
 public class JUnit extends GameState {
 
@@ -15,45 +20,57 @@ public class JUnit extends GameState {
 
 		CreateDecks.INSTANCE.execute();
 
-		addCardRobotToFlash(EModel.COMMANDBOT, 4);
-		addCardRobotToFlash(EModel.SIRENBOT, 2);
+		addCardRobotToList(List.FLASH, EModel.COMMANDBOT, 4);
+		addCardRobotToList(List.FLASH, EModel.SIRENBOT, 2);
 
-		addCardRobotToFactory(EModel.COMMANDBOT, 4);
-		addCardRobotToFactory(EModel.SIRENBOT, 2);
+		addCardRobotToList(List.PLATFORM, EModel.COMMANDBOT, 4);
+		addCardRobotToList(List.PLATFORM, EModel.SIRENBOT, 2);
+		addCardRobotToList(List.PLATFORM, EModel.CYCLOBOT, 4);
+		addCardRobotToList(List.PLATFORM, EModel.CYCLOBOT, 4);
+		addCardRobotToList(List.PLATFORM, EModel.SIRENBOT, 4);
 
-		addCardRobotToStock(EModel.COMMANDBOT, 4);
-		addCardRobotToStock(EModel.SIRENBOT, 2);
+		addCardRobotToList(List.STOCK, EModel.COMMANDBOT, 4);
+		addCardRobotToList(List.STOCK, EModel.SIRENBOT, 2);
+
+		addCardMachineSameModelToFactory(EMachineStage.I, EModel.CYCLOBOT);
+		addCardMachineSameModelToFactory(EMachineStage.II, EModel.SIRENBOT);
+
+		addCardMachineSameSizeToFactory(EMachineStage.II, 4);
+		addCardMachineSameSizeToFactory(EMachineStage.I, 4);
+		addCardMachineSameSizeToFactory(EMachineStage.II, 2);
 
 		addCardsToExperiencePile(6);
 
-		Flow.INSTANCE.getFlow().addLast(FillFactory.class);
-		Flow.INSTANCE.getFlow().addLast(FillPlatform.class);
+//		Flow.INSTANCE.getFlow().addLast(FillFactory.class);
+//		Flow.INSTANCE.getFlow().addLast(FillPlatform.class);
+//		Flow.INSTANCE.getFlow().addLast(Intervation.class);
+		Flow.INSTANCE.getFlow().addLast(Repair.class);
 
 		proceedToNextGameState();
 
 	}
 
-	public void addCardRobotToFlash(EModel eModel, int size) {
+	private enum List {
 
-		CardRobot cardRobot = new CardRobot(eModel, size);
-		Lists.INSTANCE.flash.getArrayList().addLast(cardRobot);
-		Lists.INSTANCE.flash.relocateImageViews();
+		FLASH(Lists.INSTANCE.flash), PLATFORM(Lists.INSTANCE.platform), STOCK(Lists.INSTANCE.stock);
+
+		private ListImageViewAbles<CardBot> list = null;
+
+		private List(ListImageViewAbles<CardBot> list) {
+			this.list = list;
+		}
+
+		public ListImageViewAbles<CardBot> getList() {
+			return this.list;
+		}
 
 	}
 
-	public void addCardRobotToFactory(EModel eModel, int size) {
+	public void addCardRobotToList(List list, EModel eModel, int size) {
 
-		CardRobot cardRobot = new CardRobot(eModel, size);
-		Lists.INSTANCE.platform.getArrayList().addLast(cardRobot);
-		Lists.INSTANCE.platform.relocateImageViews();
-
-	}
-
-	public void addCardRobotToStock(EModel eModel, int size) {
-
-		CardRobot cardRobot = new CardRobot(eModel, size);
-		Lists.INSTANCE.stock.getArrayList().addLast(cardRobot);
-		Lists.INSTANCE.stock.relocateImageViews();
+		CardBot cardBot = new CardRobot(eModel, size);
+		list.getList().getArrayList().addLast(cardBot);
+		list.getList().relocateImageViews();
 
 	}
 
@@ -66,6 +83,22 @@ public class JUnit extends GameState {
 			lists().experiencePile.relocateImageViews();
 
 		}
+
+	}
+
+	public void addCardMachineSameModelToFactory(EMachineStage eMachineStage, EModel eModel) {
+
+		CardMachine cardMachine = new CardMachineSameModel(eMachineStage, eModel);
+		lists().factory.getArrayList().addLast(cardMachine);
+		lists().factory.relocateImageViews();
+
+	}
+
+	public void addCardMachineSameSizeToFactory(EMachineStage eMachineStage, int size) {
+
+		CardMachine cardMachine = new CardMachineSameSize(eMachineStage, size);
+		lists().factory.getArrayList().addLast(cardMachine);
+		lists().factory.relocateImageViews();
 
 	}
 

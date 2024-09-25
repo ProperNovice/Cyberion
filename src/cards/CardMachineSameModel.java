@@ -41,4 +41,8 @@ public class CardMachineSameModel extends CardMachine {
 
 	}
 
+	public EModel getEModel() {
+		return this.eModel;
+	}
+
 }

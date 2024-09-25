@@ -133,6 +133,13 @@ public abstract class GameState {
 
 	protected final void handleCardMachinePressed(CardMachine cardMachine) {
 
+		if (lists().factory.getArrayList().contains(cardMachine))
+			handleCardMachineFactoryPressed(cardMachine);
+
+	}
+
+	protected void handleCardMachineFactoryPressed(CardMachine cardMachine) {
+
 	}
 
 }
