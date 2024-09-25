@@ -128,4 +128,10 @@ public class Repair extends GameState {
 
 	}
 
+	private boolean canRepairIdentical() {
+
+		return true;
+
+	}
+
 }

@@ -2,6 +2,7 @@ package gameStates;
 
 import cards.CardBot;
 import cards.CardMachine;
+import cards.CardMachineIdentical;
 import cards.CardMachineSameModel;
 import cards.CardMachineSameSize;
 import cards.CardRobot;
@@ -21,23 +22,29 @@ public class JUnit extends GameState {
 		CreateDecks.INSTANCE.execute();
 
 		addCardRobotToList(List.FLASH, EModel.COMMANDBOT, 4);
+		addCardRobotToList(List.FLASH, EModel.CYCLOBOT, 1);
 		addCardRobotToList(List.FLASH, EModel.SIRENBOT, 2);
 
 		addCardRobotToList(List.PLATFORM, EModel.COMMANDBOT, 4);
 		addCardRobotToList(List.PLATFORM, EModel.SIRENBOT, 2);
 		addCardRobotToList(List.PLATFORM, EModel.CYCLOBOT, 4);
-		addCardRobotToList(List.PLATFORM, EModel.CYCLOBOT, 4);
+		addCardRobotToList(List.PLATFORM, EModel.CYCLOBOT, 1);
 		addCardRobotToList(List.PLATFORM, EModel.SIRENBOT, 4);
 
 		addCardRobotToList(List.STOCK, EModel.COMMANDBOT, 4);
 		addCardRobotToList(List.STOCK, EModel.SIRENBOT, 2);
+		addCardRobotToList(List.STOCK, EModel.CYCLOBOT, 1);
 
 		addCardMachineSameModelToFactory(EMachineStage.I, EModel.CYCLOBOT);
-		addCardMachineSameModelToFactory(EMachineStage.II, EModel.SIRENBOT);
+//		addCardMachineSameModelToFactory(EMachineStage.II, EModel.SIRENBOT);
 
-		addCardMachineSameSizeToFactory(EMachineStage.II, 4);
-		addCardMachineSameSizeToFactory(EMachineStage.I, 4);
+//		addCardMachineSameSizeToFactory(EMachineStage.II, 4);
+//		addCardMachineSameSizeToFactory(EMachineStage.I, 4);
 		addCardMachineSameSizeToFactory(EMachineStage.II, 2);
+
+		addCardmachineIdenticalToFactory(EMachineStage.II);
+		addCardmachineIdenticalToFactory(EMachineStage.III);
+		addCardmachineIdenticalToFactory(EMachineStage.II);
 
 		addCardsToExperiencePile(6);
 
@@ -97,6 +104,14 @@ public class JUnit extends GameState {
 	public void addCardMachineSameSizeToFactory(EMachineStage eMachineStage, int size) {
 
 		CardMachine cardMachine = new CardMachineSameSize(eMachineStage, size);
+		lists().factory.getArrayList().addLast(cardMachine);
+		lists().factory.relocateImageViews();
+
+	}
+
+	public void addCardmachineIdenticalToFactory(EMachineStage eMachineStage) {
+
+		CardMachine cardMachine = new CardMachineIdentical(eMachineStage);
 		lists().factory.getArrayList().addLast(cardMachine);
 		lists().factory.relocateImageViews();
 
